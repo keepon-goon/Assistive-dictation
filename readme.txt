@@ -8,24 +8,17 @@
 - Vue 3
 - Vite
 
-本地启动前端：
-1. 进入目录：cd frontend
-2. 安装依赖：npm install
-3. 启动开发环境：npm run dev
-4. 构建生产包：npm run build
-5. 本地预览：npm run preview
-
 协作约定：
 - 前端同学主要在 frontend 目录开发。
 - 后端同学主要在 backend 目录开发。
 - 根目录用于放置项目说明、协作文档和仓库配置。
 
 
-## 协作约定
+协作约定
 
 本项目采用 `main + dev + feature` 的分支协作方式。
 
-### 分支说明
+分支说明
 
 - `main`：稳定分支，仅保存阶段性可运行版本，不直接用于日常开发。
 - `dev`：开发分支，所有功能完成后先合并到该分支。
@@ -34,7 +27,7 @@
   - `feature/backend-practice-api`
   - `feature/docs-update`
 
-### 开发流程
+开发流程
 
 1. 首次拉取项目：
 
