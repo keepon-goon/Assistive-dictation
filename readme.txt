@@ -29,11 +29,6 @@
 
 开发流程
 
-1. 首次拉取项目：
-
-```bash
-git clone 仓库地址
-cd 仓库名
-git checkout -b dev
-git push -u origin dev
-```
+  开发前先同步最新dev分支
+  开发具体功能使用git checkout -b feature/功能名称
+  完成后Pull Request 申请向dev分支提交
