@@ -2,11 +2,15 @@
 
 目录结构：
 - frontend：Vue 前端工程（Vite）
-- backend：后端目录（当前为空，由后端同学维护）
+- backend：后端目录已初始化
 
 前端技术栈：
 - Vue 3
 - Vite
+
+后端技术栈：
+-springboot 4.0.6
+-mysql 8
 
 协作约定：
 - 前端同学主要在 frontend 目录开发。
