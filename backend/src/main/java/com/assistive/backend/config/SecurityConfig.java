@@ -1,5 +1,7 @@
 package com.assistive.backend.config;
 
+
+
 import com.assistive.backend.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +27,8 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth.requestMatchers(
-                                "/test/**",
-                                "/auth/login","/auth/register"
+                        "/test/**",
+                        "/auth/login","/auth/register"
 
                         ).permitAll()
                         .anyRequest()

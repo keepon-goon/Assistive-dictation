@@ -1,12 +1,14 @@
 package com.assistive.backend.security;
 
+
+
 import com.assistive.backend.mapper.SysRoleMapper;
 import com.assistive.backend.utils.JwtUtils;
+import com.assistive.backend.vo.RoleItemVO;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,7 +26,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final SysRoleMapper sysRoleMapper;
     private final JwtUtils jwtUtils;
 
-    public JwtAuthenticationFilter(JwtUtils jwtUtils, SysRoleMapper sysRoleMapper) {
+    public JwtAuthenticationFilter(JwtUtils jwtUtils,SysRoleMapper sysRoleMapper) {
         this.jwtUtils = jwtUtils;
         this.sysRoleMapper = sysRoleMapper;
     }
@@ -47,7 +49,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
             Long userId = jwtUtils.getUserId(token);
 
-            List<String> roleCodes = sysRoleMapper.selectAllRolesByUserId(userId);
+
+            List<String> roleCodes = new ArrayList<>();
+            for (RoleItemVO role : sysRoleMapper.selectAllRolesByUserId(userId)){
+                roleCodes.add(role.getRoleCode());
+            }
+
 
             List<GrantedAuthority> authorities = new ArrayList<>();
             if (roleCodes != null){

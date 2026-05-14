@@ -1,7 +1,6 @@
 package com.assistive.backend.exception;
 
 
-
 import com.assistive.backend.common.Result;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;

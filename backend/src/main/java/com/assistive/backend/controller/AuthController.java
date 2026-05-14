@@ -1,12 +1,12 @@
 package com.assistive.backend.controller;
 
+
 import com.assistive.backend.common.Result;
 import com.assistive.backend.dto.LoginDTO;
 import com.assistive.backend.dto.RegisterDTO;
 import com.assistive.backend.service.AuthService;
 import com.assistive.backend.vo.LoginVO;
 import jakarta.validation.Valid;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

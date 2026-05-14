@@ -1,6 +1,7 @@
 package com.assistive.backend.service.impl;
 
 
+
 import com.assistive.backend.dto.UpdatePasswordDTO;
 import com.assistive.backend.dto.UpdateUserProfileDTO;
 import com.assistive.backend.entity.SysUser;
@@ -8,6 +9,7 @@ import com.assistive.backend.exception.BusinessException;
 import com.assistive.backend.mapper.SysRoleMapper;
 import com.assistive.backend.mapper.SysUserMapper;
 import com.assistive.backend.service.UserService;
+import com.assistive.backend.vo.RoleItemVO;
 import com.assistive.backend.vo.UserInfoVO;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,7 +24,7 @@ public class UserServiceImpl implements UserService {
     private final SysRoleMapper sysRoleMapper;
     private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(SysUserMapper sysUserMapper,SysRoleMapper sysRoleMapper,PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(SysUserMapper sysUserMapper, SysRoleMapper sysRoleMapper, PasswordEncoder passwordEncoder) {
         this.sysUserMapper = sysUserMapper;
         this.sysRoleMapper = sysRoleMapper;
         this.passwordEncoder = passwordEncoder;
@@ -64,7 +66,7 @@ public class UserServiceImpl implements UserService {
         userInfoVO.setEmail(user.getEmail());
         userInfoVO.setStatus(user.getStatus());
 
-        List<String> roles = sysRoleMapper.selectAllRolesByUserId(user.getId());
+        List<RoleItemVO> roles = sysRoleMapper.selectAllRolesByUserId(user.getId());
         userInfoVO.setRoles(roles);
         return userInfoVO;
     }

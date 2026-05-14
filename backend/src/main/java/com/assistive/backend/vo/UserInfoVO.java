@@ -19,5 +19,5 @@ public class UserInfoVO {
 
     private Integer status;
 
-    List<String> roles;
+    List<RoleItemVO> roles;
 }

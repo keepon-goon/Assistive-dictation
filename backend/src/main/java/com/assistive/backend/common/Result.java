@@ -1,5 +1,6 @@
 package com.assistive.backend.common;
 
+
 import lombok.Data;
 
 @Data
